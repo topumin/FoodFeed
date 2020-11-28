@@ -1,31 +1,16 @@
 import React from 'react'
-import { createStackNavigator } from '@react-navigatoion/stack'
+import {createStackNavigator} from '@react-navigation/stack';
 import { View, Text } from 'react-native'
 import HomeScreen from './HomeScreen'
 
 const Stack = createStackNavigator();
 
-const RootStack = function() {
-    return(
-        <Stack.Navigator
-            initialRouteName="HomeScreen"
-            screenOptions={{gestureEnable: false}}
-        >
-            <Stack.Screen
-                name="HomeScreen"
-                component={HomeScreen}
-                options={{title: Home}}
-            />
-        </Stack.Navigator>
-    );
-}
-
-export default function App() {
-    return (
-        <View>
-            <Text></Text>
-        </View>
-    )
-}
+const RootStack = (props) => {
+  return (
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+};
 
 export default RootStack;
